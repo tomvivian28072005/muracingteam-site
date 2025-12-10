@@ -352,6 +352,7 @@ main{
   place-items: center;
 }
 
+
 .split-section .image-block img {
   width: 100%;
   max-width: none;     /* supprime la limite à 520px/620px */
@@ -364,6 +365,7 @@ main{
   box-shadow: none;
 
 }
+
 
 /* Sur grands écrans, autoriser un peu plus */
 @media (min-width: 1440px){
@@ -842,11 +844,11 @@ section[id^="section_"]{
 
 
 
+
 /* Mettre les noms en gras */
 .p1 {
   font-weight: bold;
 }
-
 
 
 
@@ -904,6 +906,15 @@ section[id^="section_"]{
   margin-inline: auto;
 }
 
+
+/* Réduit l'écart entre le nom et le titre */
+.team-member p {
+  margin-bottom: 4px; /* réduit la marge sous le nom */
+}
+
+.team-member .p1 {
+  margin-top: 2px; /* réduit la marge au-dessus du titre */
+}
 
 
 /* ================================
