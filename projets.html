@@ -9,38 +9,38 @@
   <link rel="icon" type="image/png" href="images/logo/favicon.png">
 </head>
 
-<body>
+<body class="is-loading">
   <!-- Barre de navigation fixe centrale -->
   <header class="topbar" role="banner" id="topbar">
     <nav class="topbar__nav" role="navigation" aria-label="Navigation principale">
-      <a class="brand" href="#"><img src="images/logo/logo_officiel_NBT.png"/></a>
+      <a class="brand" href="#"><img src="images/logo/logo_officiel_NBT.png" alt="Logo MuRacingTeam"/></a>
 
       <ul class="topbar__menu" id="topbarMenu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="#">Le projet</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
+        <li><a href="evenements.html">Evenement</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
-<section class="hero-banner">
-  <div class="top-photo">
-      <img src="images/logo/banniere.png">
-  </div>  
-</section>
 
+  <section class="hero-banner">
+    <div class="top-photo">
+      <img src="images/logo/Gemini_Generated_Image_w701y1w701y1w701.png" alt="Banniere MuRacingTeam">
+    </div>
+  </section>
 
 <!-- Section Projet -->
 <section class="section white-section split-section">
   <div class="text-block">
     <h1>Le projet 2025-2026</h1>
     <p>
-      Cette année, notre objectif est de concevoir une monoplace qui participera à la course Formula Student dans la cathégorie moteur thermique 
+      Cette année, notre objectif est de concevoir une monoplace qui participera à la course Formula Student dans la catégorie moteur thermique 
     </p>
   </div>
   <div class="image-block">
-    <img src="images/projets/debut_moteur.JPG">
+    <img src="images/projets/debut_moteur.JPG" alt="Prototype moteur du projet">
   </div>
 </section>
 
@@ -52,77 +52,113 @@
   </div>
 
   <div class="departments-grid">
-  
-	<a class="dept-card" href="#section_gmp" aria-label="Fabrication – en savoirell-desc"><h3 class="dept-title">GMP</h3>
-	<p class="cell-desc">Groupe MotoPropulseur&nbsp;: moteur, transmission et gestion thermique pour maximiser l’efficacité.</p>
-	</a>
+    <a class="dept-card" href="#section_gmp" aria-label="Fabrication – en savoirell-desc">
+      <h3 class="dept-title">GMP</h3>
+      <p class="cell-desc">Groupe MotoPropulseur&nbsp;: moteur, transmission et gestion thermique pour maximiser l’efficacité.</p>
+    </a>
 
-	<a class="dept-card" href="#section_chassis" aria-label="Fabrication – en savoirell-desc"><h3 class="dept-title">Châssis</h3>
-	<p class="cell-desc">Architecture et rigidité du châssis, sécurité, géométrie et intégration des sous-systèmes.</p>
-	</a>
+    <a class="dept-card" href="#section_chassis" aria-label="Fabrication – en savoirell-desc">
+      <h3 class="dept-title">Châssis</h3>
+      <p class="cell-desc">Architecture et rigidité du châssis, sécurité, géométrie et intégration des sous-systèmes.</p>
+    </a>
 
-	<a class="dept-card" href="#section_train-roulant" aria-label="Fabrication – en savoirell-desc"><h3 class="dept-title">Train‑Roulant</h3>
-	<p class="cell-desc">Suspension, direction, freins et pneus&nbsp;: tenue de route et stabilité en priorité.</p>
-	</a>
+    <a class="dept-card" href="#section_train-roulant" aria-label="Fabrication – en savoirell-desc">
+      <h3 class="dept-title">Train‑Roulant</h3>
+      <p class="cell-desc">Suspension, direction, freins et pneus&nbsp;: tenue de route et stabilité en priorité.</p>
+    </a>
 
-	<a class="dept-card" href="#section_cockpit" aria-label="Fabrication – en savoirell-desc"><h3 class="dept-title">Cockpit</h3>
-	<p class="cell-desc">Ergonomie pilote, instrumentation et HMI&nbsp;: confort, sécurité et lisibilité.</p>
-	</a>
+    <a class="dept-card" href="#section_cockpit" aria-label="Fabrication – en savoirell-desc">
+      <h3 class="dept-title">Cockpit</h3>
+      <p class="cell-desc">Ergonomie pilote, instrumentation et HMI&nbsp;: confort, sécurité et lisibilité.</p>
+    </a>
 
-	<a class="dept-card" href="#section_aerodynamique" aria-label="Fabrication – en savoirell-desc"><h3 class="dept-title">Aérodynamique</h3>
-	<p class="cell-desc">CFD, appuis et traînée</p>
-	</a>
+    <a class="dept-card" href="#section_aerodynamique" aria-label="Fabrication – en savoirell-desc">
+      <h3 class="dept-title">Aérodynamique</h3>
+      <p class="cell-desc">CFD, appuis et traînée</p>
+    </a>
 
-    <a class="dept-card" href="#section_fabrication" aria-label="Fabrication – en savoirell-desc"><h3 class="dept-title">Fabrication</h3>
-	<p class="cell-desc">Procédés, matériaux, qualité, construction et assemblage</p>
-	</a>
+    <a class="dept-card" href="#section_fabrication" aria-label="Fabrication – en savoirell-desc">
+      <h3 class="dept-title">Fabrication</h3>
+      <p class="cell-desc">Procédés, matériaux, qualité, construction et assemblage</p>
+    </a>
   </div>
 </section>
 
 <section id="section_gmp" class="section white-section1">
   <h2 class="big-green-title">GMP</h2>
-  <p>Contenu…</p>
+  <p>Developpement moteur, transmission et gestion thermique pour la fiabilite et la performance. Le moteur est un 4 cylindres de 600 cm3 Honda, pris sur une CB600F Hornet de 2007.</p>
+  <div class="specs-table" aria-label="Caracteristiques moteur">
+    <div class="specs-row">
+      <span class="specs-label">Type</span>
+      <span class="specs-value">4 cylindres en ligne, 16 soupapes</span>
+    </div>
+    <div class="specs-row">
+      <span class="specs-label">Cylindree</span>
+      <span class="specs-value">599 cm3</span>
+    </div>
+    <div class="specs-row">
+      <span class="specs-label">Origine</span>
+      <span class="specs-value">Honda CB600F Hornet (modele 2007)</span>
+    </div>
+    <div class="specs-row">
+      <span class="specs-label">Puissance d'origine</span>
+      <span class="specs-value">102 ch (75 kW) a 12 000 tr/min</span>
+    </div>
+    <div class="specs-row">
+      <span class="specs-label">Couple</span>
+      <span class="specs-value">635 Nm a 10 500 tr/min</span>
+    </div>
+    <div class="specs-row">
+      <span class="specs-label">Alimentation</span>
+      <span class="specs-value">Injection electronique PGM-FI</span>
+    </div>
+    <div class="specs-row">
+      <span class="specs-label">Poids moteur</span>
+      <span class="specs-value">Environ 60 kg</span>
+    </div>
+  </div>
 </section>
 
 <section id="section_chassis" class="section white-section1">
   <h2 class="big-green-title">Châssis</h2>
-  <p>Contenu…</p>
+  <p>Conception de la structure, securite et integration des sous-ensembles.</p>
+  <div class="image-block">
+    <img src="images/accueil/CAO_Chassis.png" alt="Illustration CAO chassis">
+  </div>
 </section>
 
 <section id="section_train-roulant" class="section white-section1">
   <h2 class="big-green-title">Train‑Roulant</h2>
-  <p>Contenu…</p>
+  <p>Suspension, direction et freinage pour optimiser la tenue de route.</p>
 </section>
 
 <section id="section_cockpit" class="section white-section1">
   <h2 class="big-green-title">Cockpit</h2>
-  <p>Contenu…</p>
+  <p>Poste pilote, instrumentation et ergonomie pour le confort et la securite.</p>
 </section>
 
 <section id="section_aerodynamique" class="section white-section1">
   <h2 class="big-green-title">Aérodynamique</h2>
-  <p>Contenu…</p>
+  <p>Etudes CFD et design des appendices pour l'appui et la trainee.</p>
 </section>
 
 <section id="section_fabrication" class="section white-section1">
   <h2 class="big-green-title">Fabrication</h2>
-  <p>Contenu…</p>
+  <p>Procedes, choix des materiaux, assemblage et controle qualite.</p>
 </section>
 
+  <footer class="bottombar" role="contentinfo" id="footer">
+    <div class="bottombar__content">
+      <a href="index.html">MuRacingTeam</a>
+      <p>|</p>
+      <a href="contact.html">Contact :</a>
+      <a href="mailto:muracing@supmicrotech.fr?subject=Contact%20MuRacingTeam" target="_blank" rel="noopener noreferrer">muracing@supmicrotech.fr</a>
+      <p>-</p>
+      <a href="https://www.linkedin.com/in/tom-vivian-467822323" target="_blank" rel="noopener noreferrer">Réalisé par Tom VIVIAN</a>
+    </div>
+  </footer>
 
-
-<footer class="bottombar" role="contentinfo" id="footer">
-  <div class="bottombar__content">
-	  <a href="index.html">MuRacingTeam</a>
-	  <p>|</p> 
-	  <a href="contact.html">Contact :</a> 
-	  <p>muracing@supmicrotech.fr -</p> 
-	  <a href="#" class="btn-link" data-url="https://www.linkedin.com/in/tom-vivian-467822323">Réalisé par Tom VIVIAN</a>
-  </div>
-</footer>
-  
-
-  <script src="script.js"></script>  
+  <script src="script.js"></script>
 
 </body>
 

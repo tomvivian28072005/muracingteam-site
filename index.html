@@ -9,112 +9,74 @@
   <link rel="icon" type="image/png" href="images/logo/favicon.png">
 </head>
 
-<body>
+<body class="is-loading">
   <!-- Barre de navigation fixe centrale -->
   <header class="topbar" role="banner" id="topbar">
     <nav class="topbar__nav" role="navigation" aria-label="Navigation principale">
-      <a class="brand" href="#"><img src="images/logo/logo_officiel_NBT.png"/></a>
+      <a class="brand" href="index.html"><img src="images/logo/logo_officiel_NBT.png" alt="Logo MuRacingTeam"/></a>
 
       <ul class="topbar__menu" id="topbarMenu">
-        <li><a href="#">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="projets.html">Le projet</a></li>
         <li><a href="equipe.html">L'équipe</a></li>
+        <li><a href="evenements.html">Evenement</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
 
-  
-<!-- Vidéo plein écran -->
+  <!-- Vidéo plein écran -->
   <div class="video-container">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline poster="images/equipe/groupe_hall.JPG">
       <source src="videos/background.mp4" type="video/mp4" />
     </video>
   </div>
 
+  <main>
+    <!-- Section 2 : Fond blanc -->
+    <section class="section white-section split-section">
+      <div class="text-block">
+        <h1>Notre Histoire</h1>
+        <p>L’association MuRacingTeam est née de la passion pour la compétition automobile. Aujourd’hui notre équipe est prête à relever le défi que représente la Formula Student. L’association vient de Supmicrotech, ecole d’ingenieur en mecanique de Besancon.</p>
+      </div>
+      <div class="image-block">
+        <img src="images/accueil/LOGO_SUPMICROTECH_RVB.png" alt="Logo Supmicrotech">
+      </div>
+    </section>
 
+    <!-- Section Objectifs -->
+    <section class="green-section">
+      <div class="section__inner split-section">
+        <div class="image-block">
+          <img src="images/accueil/CAO_Chassis.png" alt="Illustration CAO chassis">
+        </div>
+        <div class="text-block">
+          <h1>Nos Objectifs pour 2026</h1>
+          <p>Cette année, MuRacingTeam vise à construire une monoplace capable de participer à la course ou, à défaut, un prototype démonstratif illustrant le savoir-faire de l’association.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- Section 2 : Fond blanc -->
-<section class="section white-section split-section">
-  <div class="text-block">
-    <h1>Notre Histoire</h1>
-    <p>L’association MuRacingTeam est née de la passion pour la compétition automobile et l’innovation technologique. Elle a mis du temps à se développer, mais aujourd’hui notre équipe est prête à relever le défi que représente la Formula Student.</p>
-  </div>
-  <div class="image-block">
-    <img src="images/logo/logo_officiel.jpg">
-  </div>
-</section>
+    <section class="section white-section" id="sponsor">
+      <header class="section-header">
+        <h1>Les sponsors</h1>
+      </header>
+      <p>Liste des sponsors a venir.</p>
+    </section>
+  </main>
 
+  <footer class="bottombar" role="contentinfo" id="footer">
+    <div class="bottombar__content">
+      <a href="index.html">MuRacingTeam</a>
+      <p>|</p>
+      <a href="contact.html">Contact :</a>
+      <a href="mailto:muracing@supmicrotech.fr?subject=Contact%20MuRacingTeam" target="_blank" rel="noopener noreferrer">muracing@supmicrotech.fr</a>
+      <p>-</p>
+      <a href="https://www.linkedin.com/in/tom-vivian-467822323" target="_blank" rel="noopener noreferrer">Réalisé par Tom VIVIAN</a>
+    </div>
+  </footer>
 
-
-<!-- Section Objectifs -->
-<section class="green-section">
-  <div class="section__inner split-section">
-  <div class="image-block">
-    <img src="images/logo/vide.png">
-  </div>
-  <div class="text-block">
-    <h1>Nos Objectifs pour 2026</h1>
-    <p>Cette année, MuRacingTeam vise à construire une monoplace capable de participer à la course ou, à défaut, un prototype démonstratif illustrant le savoir-faire de l’association.</p>
-  </div>
-  </div>
-</section>
-
-
-<!-- Section 4 : Fond blanc, chiffres clés -->
-<section class="section white-section stats-section" id="stats2025">
-  <header class="section-header">
-    <h1>Les chiffres de 2025</h1>
-  </header>
-
-  <ul class="stats-grid" aria-label="Statistiques 2025">
-    <li class="stat-item">
-      <a href="equipe.html" class="stat-value">19</a>
-      <p class="stat-label">Membres actifs</p>
-    </li>
-    <li class="stat-item">
-      <a href="contact.html" class="stat-value">0</a>
-      <p class="stat-label">Euros de budget</p>
-    </li>
-    <li class="stat-item">
-      <a href="projets.html" class="stat-value">0</a>
-      <p class="stat-label">Monoplaces</p>
-    </li>
-    <li class="stat-item">
-      <a href="projets.html" class="stat-value">4</a>
-      <p class="stat-label">Année d'existence</p>
-    </li>
-  </ul>
-
-</section>
-
-
-<section class="section white-section ahaha" id="carrevert">
-  <div class="image-en-bas">
-    <img src="images/equipe/groupe_hall.JPG">
-  </div>
-</section>
-
-<section class="section white-section" id="sponsor">
-  <header class="section-header">
-    <h1>Les sponsors</h1>
-  </header>
-</section>
-  
-  
-<footer class="bottombar" role="contentinfo" id="footer">
-  <div class="bottombar__content">
-	  <a href="index.html">MuRacingTeam</a>
-	  <p>|</p> 
-	  <a href="contact.html">Contact :</a> 
-	  <p>muracing@supmicrotech.fr -</p> 
-	  <a href="#" class="btn-link" data-url="https://www.linkedin.com/in/tom-vivian-467822323">Réalisé par Tom VIVIAN</a>
-  </div>
-</footer>
-  
-
-  <script src="script.js"></script>  
+  <script src="script.js"></script>
 
 </body>
 

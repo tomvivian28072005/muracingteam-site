@@ -1,12 +1,11 @@
 
-/* TOPBAR */
-
+/* ================================
+  Base & Variables
+  ================================ */
 /* --- Reset léger et cohérent --- */
 :where(*, *::before, *::after) { box-sizing: border-box; }
 :where(html, body) { margin: 0; }
 :where(ul[role="list"], ol[role="list"]) { list-style: none; margin: 0; padding: 0; }
-
-
 
 :root{
   /* Hauteur topbar fluide pour PC */
@@ -26,17 +25,53 @@
   --topbar-fg-solid: #111111;
   --topbar-link-hover-solid: #444;
   --topbar-shadow-solid: 0 4px 14px rgba(0,0,0,0.12);
+
+  /* Footer */
+  --footer-bg: #0f7d4a;
+  --footer-fg: #ffffff;
+
+  /* Layout general */
+  --gap: 1rem;
+  --gap-lg: 1.5rem;
+  --green: #0f7d4a;
+  --text: #111;
+  --muted: #5a5a5a;
+  --border: rgba(15,125,74,0.12);
+  --radius-lg: 12px;
+  --brand-green: var(--green, #0f7d4a);
+  --section-gap: clamp(48px, 6vw, 96px);
+
+  /* Contact / boutons */
+  --accent: #0f7d4a;
+  --accent-600: #0c6c42;
+  --accent-700: #095c38;
+  --text-on-accent: #ffffff;
+  --radius: 12px;
+  --shadow-1: 0 4px 10px rgba(0,0,0,0.18);
+  --shadow-2: 0 8px 20px rgba(0,0,0,0.12);
+  --contact-max: 1100px;
+  --contact-gap: 24px;
 }
 
-
+/* ================================
+  Base
+  ================================ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Tahoma, Arial, sans-serif;
   color: #111;
   background: #fff;
   text-rendering: optimizeLegibility;
-
+  transition: opacity 0.2s ease;
 }
 
+body.is-loading {
+  opacity: 0;
+  background: #000;
+}
+
+/* ================================
+   Topbar
+   ================================ */
 /* Barre de navigation fixe */
 
 .topbar {
@@ -51,7 +86,7 @@ body {
   align-items: center;
   height: var(--topbar-h);
   z-index: 1000;
-  box-shadow: var(--topbar-shadow);;
+  box-shadow: var(--topbar-shadow);
 }
 
 
@@ -130,16 +165,10 @@ main {
 }
 
 
-/* Texte noir pour brand et menu */
-.brand, .topbar__menu li a {
-  color: black; /* Texte noir */
-}
-
-
+/* Typo topbar sans forcer la couleur (laisse les variables gerer) */
 .topbar, .brand, .topbar__menu li a {
   font-family: Tahoma, Arial, sans-serif;
   font-weight: normal; /* Pas en gras */
-  color: black;
 }
 
 html {
@@ -160,15 +189,9 @@ html {
 
 
 
-/* FOOTER */
-
-
-:root{
-  --container-max: 1200px;   /* même valeur que la topbar pour cohérence */
-  --footer-bg: #0f7d4a;
-  --footer-fg: #ffffff;
-}
-
+/* ================================
+  Footer
+  ================================ */
 footer.bottombar{
   width: 100%;
   background-color: var(--footer-bg);
@@ -200,10 +223,14 @@ footer.bottombar{
   border-radius: 4px;
 }
 
+/* ================================
+  Hero video
+  ================================ */
 /* --- VIDÉO FULLSCREEN HERO --- */
 .video-container{
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   /* dvh/svh pour mobile, vh pour fallback desktop */
   min-height: 100svh; /* iOS 16+ / modernes */
   min-height: 100dvh; /* Android / Chrome */
@@ -219,18 +246,10 @@ footer.bottombar{
   object-fit: cover;
 }
 
+/* ================================
+  Layout Sections
+  ================================ */
 /* Main */
-
-:root{
-  --container-max: 1200px;
-  --gap: 1rem;
-  --gap-lg: 1.5rem;
-  --green: #0f7d4a;
-  --text: #111;
-  --muted: #5a5a5a;
-  --border: rgba(15,125,74,0.12);
-  --radius-lg: 12px;
-}
 
 main{
   /* Laisse la topbar gérer padding-top via var(--topbar-h) si tu l’utilises.
@@ -322,14 +341,12 @@ main{
   max-width: 70ch; /* limite longueur de ligne */
 }
 .text-block h1{
-  font-family: 'Poppins','Segoe UI',sans-serif;
   font-weight: 700;
   font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem);
   line-height: 1.2;
   margin: 0 0 0.75rem;
 }
 .text-block p{
-  font-family: 'Poppins','Segoe UI',sans-serif;
   font-weight: 500;
   font-size: clamp(1rem, 0.95rem + 0.4vw, 1.15rem);
   color: var(--muted);
@@ -404,6 +421,9 @@ main{
 }
 
 
+/* ================================
+  Accueil: Stats
+  ================================ */
 /* ===== Section 4 — Titre ===== */
 .stats-section .section-header{
   text-align: center;
@@ -519,6 +539,9 @@ main{
   text-align: center;
 }
 
+/* ================================
+  Accueil: Sponsors
+  ================================ */
 /* ===== Sponsors (section suivante) ===== */
 #sponsor .section-header{
   text-align: center;
@@ -557,6 +580,9 @@ main{
 }
 
 
+/* ================================
+  Section spacing
+  ================================ */
 /* Ajoute une marge verticale entre toutes les sections */
 .section {
   margin-bottom: clamp(48px, 6vw, 96px); /* 48px sur mobile → 96px sur grands écrans */
@@ -564,38 +590,52 @@ main{
 }
 
 
+/* ================================
+  Accueil: Carrevert
+  ================================ */
 #carrevert {
   background-color: #0f7d4a; /* ton vert */
   width: 100%;              /* prend toute la largeur */
-  height: 800px;            /* hauteur fixe (ajuste à ton besoin) */
-}
-
-
-.image-en-bas img {
-  display: block;
-  width: 100%;          /* occupe toute la largeur disponible */
-  height: auto;         /* garde les proportions */
-  max-height: 100%;     /* ne dépasse pas la hauteur du parent */
-  object-fit: cover;    /* recadre si nécessaire sans déformer */
-}
- .ahaha {
+  height: 160px;
   position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#carrevert.section {
   width: 100%;
-  height: 100vh;        /* par exemple, pleine hauteur écran */
-  overflow: hidden;     /* masque tout débordement */
+  padding: 0;
+  margin: 0;
+}
+
+#carrevert.carrevert--team {
+  height: 280px;
+}
+
+#carrevert.carrevert--team .carrevert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Image carrevert */
+.carrevert-img {
+  display: block;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.carrevert-img.is-loaded {
+  opacity: 1;
 }
 
 
-
-
-
-
-
-
-
-/* PROJET */
-
-
+/* ================================
+  Projet
+  ================================ */
 
 /* Bloc qui débloque la largeur 100vw même si tes sections sont centrées */
 .top-photo{
@@ -618,6 +658,9 @@ main{
 
 
 
+/* ================================
+  Projet: Departements
+  ================================ */
 /* ===== Section départements ===== */
 
 
@@ -641,23 +684,6 @@ main{
   margin: 0 auto;
 }
 
-/* Cartes : gardent leur fond blanc, ombre, etc. */
-.dept-card{
-  position: relative;
-  z-index: 1; /* cartes sous les séparations */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  padding: 28px 22px;
-  min-height: 180px;
-  background: #fff;
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-  border-radius: 10px;
-}
-
 /* === OVERLAY DES SÉPARATIONS ===
    On dessine les 2 filets internes + les 2 externes au-dessus des cartes */
 .departments-grid::before{
@@ -667,11 +693,10 @@ main{
   inset: 0;                        /* couvre tout le container */
   z-index: 2;                      /* AU-DESSUS des cartes */
   /* 4 gradients : gauche, (col1|col2), (col2|col3), droite */
-background:
+  background:
     linear-gradient(to right, #0f7d4a 0 4px, transparent 4px) left / 4px 100% no-repeat,
     linear-gradient(to right, #0f7d4a 0 4px, transparent 4px) calc(100% / 3) 0 / 4px 100% no-repeat,
-    linear-gradient(to right, #0f7d4a 0 4px, transparent 4px) calc(2 * 100% / 3) 0 / 4px 100% no-repeat,
-    linear-gradient(to left,  #0f7d4a 0 4px, transparent 4px) right / 4px 100% no-repeat;
+    linear-gradient(to right, #0f7d4a 0 4px, transparent 4px) calc(2 * 100% / 3) 0 / 4px 100% no-repeat;
 }
 
 
@@ -774,13 +799,9 @@ background:
 
 
 
-/* ----- Variables marque ----- */
-:root{
-  --brand-green: var(--green, #0f7d4a);   /* si --green existe déjà chez toi */
-  --container-max: 1200px;
-  --section-gap: clamp(48px, 6vw, 96px); /* espace entre sections */
-}
-
+/* ================================
+  Equipe
+  ================================ */
 /* ----- Sections blanches du bloc équipe/départements ----- */
 .section.white-section1{
   width: min(100% - 2rem, var(--container-max));
@@ -842,6 +863,38 @@ section[id^="section_"]{
   margin: 0; /* titre gère le spacing au-dessus */
 }
 
+/* Specs table (projet) */
+.specs-table{
+  margin-top: 16px;
+  max-width: 720px;
+  border: 1px solid rgba(15,125,74,0.16);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.specs-row{
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) 1fr;
+  gap: 12px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(15,125,74,0.12);
+}
+
+.specs-row:first-child{
+  border-top: none;
+}
+
+.specs-label{
+  font-weight: 700;
+  color: #0f7d4a;
+}
+
+.specs-value{
+  color: #222;
+}
+
 
 
 
@@ -852,21 +905,26 @@ section[id^="section_"]{
 
 
 
-
-/* JE ME SUIS ARRETER LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
-
-
-
-
-
-
 .team-grid {
   --card-min: 100px; /* largeur mini d'une carte */
-  --gap: 24px;
+  --gap: 8px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--card-min), 0.7fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--gap);
+  justify-items: start;
+}
+
+@media (max-width: 900px){
+  .team-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px){
+  .team-grid{
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -874,7 +932,40 @@ section[id^="section_"]{
 .team-member {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  align-items: stretch;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(15, 125, 74, 0.15);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.team-member img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f2f2f2;
+  align-self: stretch;
+}
+
+.team-member.placeholder img {
+  opacity: 0;
+  background: #ffffff;
+  filter: grayscale(1) brightness(2);
+}
+
+.team-member.placeholder {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 12px;
+}
+
+.team-member.placeholder p {
+  display: none;
 }
 
 .team-member .avatar {
@@ -918,20 +1009,8 @@ section[id^="section_"]{
 
 
 /* ================================
-   Variables & bases
-   ================================ */
-:root {
-  --accent: #0f7d4a;        /* vert principal */
-  --accent-600: #0c6c42;    /* hover */
-  --accent-700: #095c38;    /* focus outline */
-  --text-on-accent: #ffffff;
-  --container-max: 1100px;
-  --gap: 24px;
-  --radius: 12px;
-  --shadow-1: 0 4px 10px rgba(0,0,0,0.18);
-  --shadow-2: 0 8px 20px rgba(0,0,0,0.12);
-}
-
+  Global helpers
+  ================================ */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -939,7 +1018,10 @@ section[id^="section_"]{
 img { display: block; max-width: 100%; height: auto; }
 
 /* ================================
-   Section contact (mobile-first)
+  Contact
+  ================================ */
+/* ================================
+  Section contact (mobile-first)
    ================================ */
 .contact-section11 {
   display: block;
@@ -948,12 +1030,12 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .contact-container11 {
-  max-width: var(--container-max);
+  max-width: var(--contact-max);
   margin-inline: auto;
 
   /* Passage en grille pour un layout fluide sans modifier le HTML */
   display: grid;
-  gap: var(--gap);
+  gap: var(--contact-gap);
   grid-template-columns: 1fr; /* mobile */
   align-items: start;
 }
@@ -999,6 +1081,48 @@ img { display: block; max-width: 100%; height: auto; }
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+/* ================================
+   Evenements
+   ================================ */
+.event-card{
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(15,125,74,0.14);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.event-card__media img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.event-card__content h2{
+  margin: 0 0 10px;
+  font-size: clamp(20px, 2.4vw, 26px);
+}
+
+.event-card__content p{
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 700px){
+  .event-card{
+    grid-template-columns: 1fr;
+  }
+
+  .event-card__media img{
+    height: 200px;
+  }
 }
 
 /* Style de base des boutons .btn existants */
